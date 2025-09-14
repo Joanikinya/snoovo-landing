@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snoovo – Coming Soon</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome CDN for Brand Icons -->
+    <script
+      src="https://kit.fontawesome.com/8e6311989c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-moon" style="color: #f8f1e5"></i> Snoovo
+      </div>
+      <h1>Coming Soon</h1>
+      <p class="description">
+        We create thoughtfully designed rest and relaxation spaces that provide
+        a serene escape, perfect for unwinding, anytime, anywhere.
+      </p>
+      <form class="email-form" id="snoovoForm">
+        <input
+          type="email"
+          name="entry.694094423"
+          id="emailInput"
+          placeholder="Email Address"
+          required
+        />
+        <button type="submit">Get Early Access</button>
+      </form>
+
+      <!-- Thank You Modal -->
+      <div id="thankYouModal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Thank you!</h2>
+          <p>
+            You’ve been added to our waitlist. We’ll let you know when Snoovo
+            launches!
+          </p>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById("snoovoForm");
+      const emailInput = document.getElementById("emailInput");
+      const thankYouModal = document.getElementById("thankYouModal");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value;
+        const formData = new FormData();
+        formData.append("entry.694094423", email);
+
+        fetch(
+          "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfC_GsEMPwgSwvmDfp8c3mS8Sox5i0eCdQuQ58gJj0bllO2FQ/formResponse",
+          {
+            method: "POST",
+            mode: "no-cors",
+            body: formData,
+          }
+        ).then(() => {
+          form.reset();
+          thankYouModal.classList.remove("hidden");
+          setTimeout(() => {
+            thankYouModal.classList.add("hidden");
+          }, 3000);
+        });
+      });
+    </script>
+  </body>
+</html>

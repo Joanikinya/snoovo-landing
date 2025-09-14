@@ -1,0 +1,180 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0C1C2E;
+  font-family: 'Inter', sans-serif;
+  color: #F8F1E5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+/* Headline */
+h1 {
+  font-size: 4.5rem;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.description {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #f8f1e5;
+  margin: 20px auto;
+  padding: 0 10px;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* Form */
+.email-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+.email-form input[type="email"] {
+  flex: 1;
+  min-width: 100%;
+  margin-top: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  width: 70%;
+  max-width: 300px;
+  background-color: #1e293b;
+  color: white;
+}
+
+.email-form button {
+  margin-top: 10px;
+  padding: 12px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #A3B18A;
+  color: #1A1A1A;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.email-form button:hover {
+  background-color: #C3D6A6; /* Lighter hover */
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+/*
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+*/
+.social-icons i {
+  color: #C3D6A6;
+  font-size: 22px;
+  margin: 0 12px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons i:hover {
+  transform: scale(1.2);
+  color: #F9FBE7 /* or your brand accent */
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0C1C2E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  color: #0C1C2E;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Font & Layout */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .email-form {
+    flex-direction: column;
+  }
+
+  .email-form input[type="email"],
+  .email-form button {
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  .email-form button {
+    border-radius: 6px;
+  }
+
+  .modal-content {
+    padding: 20px 15px;
+  }
+}
